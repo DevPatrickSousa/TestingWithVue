@@ -1,5 +1,5 @@
 <template>
-  <header-test />
+  <header-test :esta_logado="false"/>
   <FirstComponent />
   <life-cycle />
   <people-data />
