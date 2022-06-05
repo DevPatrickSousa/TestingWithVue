@@ -1,29 +1,48 @@
 <template>
-  <form action="">
+  <form action="" @submit="SendForm($event)">
     <div>
-      <input-text />
+      <input type="text" :v-model="name" placeholder="teste" />
     </div>
 
     <div>
-      <input-text />
+      <input type="text" :v-model="email" />
     </div>
 
     <div>
       <form-submit />
     </div>
-    
   </form>
 </template>
 
 
 <script>
-import InputText from "./Form/InputText.vue";
+
 import FormSubmit from "./Form/FormSubmit.vue";
 export default {
   name: "FormTeste",
   components: {
-    InputText,
+    
     FormSubmit,
+  },
+  data() {
+    return {
+      name: "asd",
+      email: "asd",
+    };
+  },
+  methods: {
+    SendForm(e) {
+
+const name = this.name
+const email = this.email
+
+      e.preventDefault();
+
+      console.log("Form Enviado");
+
+      console.log('o nome é '+ name)
+      console.log('o email é '+ email)
+    },
   },
 };
 </script>

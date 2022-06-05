@@ -1,7 +1,10 @@
 <template>
+  <p>
+    {{ compEmail }}
+  </p>
+
   <p v-if="esta_estudando">o que estou aprendendo no momento:</p>
   <p v-else>não estou estudando</p>
-
   <ul>
     <li v-for="(technology, index) in myTechnologies" :key="index">
       {{ myTechnologies }}
@@ -30,7 +33,6 @@ export default {
     return {
       esta_estudando: true,
       mostra_email: false,
-      email: "patrickseven22@hotmail.com",
       github: "https://github.com/DevPatrickSousa",
       textoBotao: "Mostrar e-mail",
       myTechnologies: ["HTML", "CSS", "JavaScript", "Vuejs"],
@@ -40,6 +42,9 @@ export default {
         { id: 3, language: "JAVASCRIPT" },
       ],
     };
+  },
+  props: {
+    email: String,
   },
   components: {
     PictureImage,

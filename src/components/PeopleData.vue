@@ -1,6 +1,6 @@
 <template>
   <h2>meu nome é {{ nome }} e abaixo estão meus dados:</h2>
-  <info-data />
+  <info-data :emaill='email' />
   <form-teste />
 </template>
 
@@ -12,6 +12,7 @@ export default {
   data() {
     return {
       nome: "Patrick",
+      email:'patrick@hotmail.com'
     };
   },
   components: {
